@@ -9,23 +9,32 @@ public class SonarSweep {
 
 	public static void main(String[] args) {
 		Scanner scan = null;
+		int result = 0;
+		ArrayList<Integer> input = new ArrayList<Integer>();
+		
 		try {
 			scan = new Scanner(new File("input.txt"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
-		int counter = 0;
-		ArrayList<Integer> input = new ArrayList<Integer>();
 		while (scan.hasNext()) {
 			input.add(scan.nextInt());
-			counter++;
 		}
-		for(Integer i : input){
+		
+		for(int i = 0; i < input.size() - 3; i++) {
+			int sumA = input.get(i) + input.get(i + 1) + input.get(i + 2);
+			int sumB = input.get(i + 1) + input.get(i + 2) + input.get(i + 3);
 			
+			if(sumB > sumA) {
+				result++;
+			}
 		}
 		
 		scan.close();
+		System.out.println("Gesamt: "+result);
 	}
 
 }
+
+
