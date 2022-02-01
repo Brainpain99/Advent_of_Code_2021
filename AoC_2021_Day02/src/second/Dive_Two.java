@@ -1,27 +1,29 @@
-package first;
+package second;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Dive {
+public class Dive_Two {
 
 	
 	public static class submarine {
 		private int horizontal = 0;
 		private int depth = 0;
+		private int aim = 0;
 		
-		public int forward(int f) {	
-			return this.horizontal += f;
+		public void forward(int f) {	
+			this.horizontal += f;
+			this.depth += aim*f;
 		}
 		
 		public int down(int d) {
-			return this.depth += d;
+			return this.aim += d;
 		}
 		
 		public int up(int u) {
-			return this.depth -= u;
+			return this.aim -= u;
 		}
 		
 		public int result() {
