@@ -7,10 +7,6 @@ import java.util.Scanner;
 
 public class Diagnostic {
 	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		Scanner scan = null;
 		ArrayList<String> input = new ArrayList<String>();
@@ -39,7 +35,7 @@ public class Diagnostic {
 			
 			for(int n = 0; n < convertedInput.size();n++) {
 				char[] splitter = convertedInput.get(n);
-				digits.add((int) splitter[i]);
+				digits.add(Integer.parseInt(String.valueOf(splitter[i])));
 			}
 			for(Integer y : digits) {
 				if(y>0) {
@@ -64,7 +60,7 @@ public class Diagnostic {
 		resultEpsilon = Integer.parseInt(stringBuilderEpsilon.toString(),2);
 		System.out.println("Gamma Gesamt:"+resultGamma);
 		System.out.println("Epsilon Gesamt:"+resultEpsilon);
-		System.out.println("Diagnose: "+(resultGamma+resultEpsilon));
+		System.out.println("Diagnose: "+(resultGamma*resultEpsilon));
 	}	
 		
 }
